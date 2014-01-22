@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 package edu.gatech.oad.antlab.person;
 
 /**
@@ -29,9 +33,16 @@ public class Person2 {
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+	 private String calc(String input) {
+		String output = "";
+		List<String> inputList = Arrays.asList(input.split(""));
+		Collections.shuffle(inputList);
+
+		for (int i = 0; i < inputList.size(); i++) {
+			output += inputList.get(i);
+		}
+		
+		return output;
 	}
 	/**
 	 * Return a string rep of this object
