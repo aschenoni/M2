@@ -1,0 +1,20 @@
+apply plugin: 'java'
+defaultTasks 'jar'
+
+def path = '.'
+
+repositories {
+	flatDir {
+		dir path
+	}
+}
+
+dependencies {
+	compile group: 'edu.gatech.oad.antlab.pkg1'
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain';
+	}
+}
