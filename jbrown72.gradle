@@ -1,0 +1,18 @@
+//Set the default task to jar
+defaultTasks 'jar'
+
+//Import java related tasks
+apply plugin: 'java'
+
+
+dependencies {
+	compile filetree('lib', include: '*.jar')
+}
+
+//Define the content of the jar file
+jar {
+	manifest {
+		attributes 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path': '../../lib/resources.jar'
+	}
+}
+
