@@ -31,12 +31,25 @@ public class Person4 {
      */
     private String calc(String input) {
       //Person 1 put your implementation here
-        String output = "";
-        for (int i = 0; i < input.length(); i++) {
-            char outChar = input.charAt(i) + 1;
-            output += outChar.toString();
-        }
-      return output;
+	String output = "";
+	for (int i = 0; i < input.length(); i++) {
+		char outChar = input.charAt(i);
+		if (outChar == "9".charAt(0)) {
+			output += "a";
+			continue;
+			}
+		else if (outChar == "z".charAt(0)) {
+			output += "A";
+			continue;
+			}
+		else if (outChar == "Z".charAt(0)) {
+			output += "0";
+			continue;
+			}
+		outChar += 1;
+		output += String.valueOf(outChar);
+		}
+	return output;
     }
     
     /**
