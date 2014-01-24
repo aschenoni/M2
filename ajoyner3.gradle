@@ -1,0 +1,26 @@
+/*	necessary tasks for build file:
+*	compileJava
+*	compileTest
+*	javadoc
+*	clean
+*	jar
+*/
+
+
+//Set the default task to jar
+defaultTasks 'jar'
+
+//Import java related tasks
+apply plugin: 'java'
+
+
+//create variables
+version = '1.0'
+
+//Define the content of the jar file
+jar{
+	manifest{
+		attributes 'Implementation-Title': 'Module 2 - Austin Joyner Edition', 'Implementation-Version': version, 'Main-Class' : ''
+	}
+}
+
