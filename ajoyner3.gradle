@@ -21,12 +21,11 @@ dependencies {
 
 //Define the content of the jar file
 jar{
-	into('lib')
-	{
-		from 'lib'
-	}
+	into('lib') {
+        from 'lib'
+    }
 
-	mainfest{
+	manifest {
 		attributes 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path': '../../lib/resources.jar'
 	}
 }
