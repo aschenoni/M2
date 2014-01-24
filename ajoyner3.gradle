@@ -14,13 +14,20 @@ defaultTasks 'jar'
 apply plugin: 'java'
 
 
-//create variables
-version = '1.0'
+dependencies {
+	runtime files('./lib/resources.jar')
+	compile files('./lib/resources.jar')
+}
 
 //Define the content of the jar file
 jar{
-	manifest{
-		attributes 'Implementation-Title': 'Module 2 - Austin Joyner Edition', 'Implementation-Version': version, 'Main-Class' : ''
+	into('lib')
+	{
+		from 'lib'
+	}
+
+	mainfest{
+		attributes 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path': '../../lib/resources.jar'
 	}
 }
 
