@@ -39,7 +39,7 @@ public class Person5 {
 				str = str + input.substring(slot, (slot + 1));
 			} else {
 
-				str = str + input.substring((i + shift), (i + shift + 1));
+				str = str + input.substring((i + move), (i + move + 1));
 			}
 		}
 		return str;
